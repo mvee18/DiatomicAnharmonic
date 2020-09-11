@@ -11,8 +11,8 @@ import (
 )
 
 var (
-	a = 1.0
-	b = 2.0
+	a  = 1.0
+	b  = 2.0
 	ps = []float64{a, b}
 )
 
@@ -23,7 +23,17 @@ var poly = func(x float64, ps []float64) float64 {
 var xdata = []float64{0, 1, 2, 3, 4, 5}
 var ydata = []float64{0, 1, 4, 9, 16, 25}
 
-func main() {
+func anharmonicityConstant(bondE float64) {
+}
+
+func frequencyHarmonic() {}
+
+func harmonicOscillator(bondE float64, v float64) float64 {
+	We := bondE / (v + 1/2)
+	return We
+}
+
+func plot() {
 	res, _ := fit.Curve1D(
 		fit.Func1D{
 			F:  poly,
@@ -60,4 +70,8 @@ func main() {
 			log.Fatal(err)
 		}
 	}
+}
+
+func main() {
+	We := harmonicOscillator()
 }
